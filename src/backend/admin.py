@@ -1,3 +1,9 @@
 from django.contrib import admin
+from django.contrib.admin import register
 
-# Register your models here.
+from backend.models.example import Example
+
+
+@register(Example)
+class ExampleAdmin(admin.ModelAdmin):
+    pass

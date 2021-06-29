@@ -12,3 +12,6 @@ migrations:
 # run this command every time when you make a git pull and after you ran above command
 migrate:
 	poetry run src/manage.py migrate
+
+superuser:
+	poetry run src/manage.py createsuperuser
