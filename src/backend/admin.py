@@ -6,11 +6,12 @@ from backend.models.contactsitem import ContactsItem
 
 
 @register(Example)
-@register(ContactsItem)
 class ExampleAdmin(admin.ModelAdmin):
     pass
 
+@register(ContactsItem)
 class ContactsItemAdmin(admin.ModelAdmin):
-    search_fields = ('name', 'surname', 'email', 'phonenumber')
+    list_display = ('name', 'surname', 'email', 'phonenumber',)
+
 
 admin.site.register(ContactsItem, ContactsItemAdmin)
