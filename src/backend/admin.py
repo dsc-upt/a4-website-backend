@@ -3,7 +3,7 @@ from django.contrib.admin import register
 
 from backend.models.example import Example
 from backend.models.settings import Settings
-from backend.models.ArticleItem import ArticleItem
+from backend.models.article import Article
 
 
 @register(Example)
@@ -14,6 +14,6 @@ class ExampleAdmin(admin.ModelAdmin):
 class ExampleSettings(admin.ModelAdmin):
     pass
 
-@register(ArticleItem)
+@register(Article)
 class ArticleItemsAdmin(admin.ModelAdmin):
     pass
