@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from backend.models.settings import Example
+from backend.models.settings import Setting
 
 
-class ExampleSerializer(serializers.ModelSerializer):
+class SettingSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Example
-        exclude = ('id',)
+        model = Setting
+        fields = '__all__'

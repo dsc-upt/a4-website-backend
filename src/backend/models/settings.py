@@ -1,13 +1,13 @@
 from django.db import models
 
 
-class Settings(models.Model):
+class Setting(models.Model):
     TYPES = {
         ("TEXT", "Text"),
         ("IMAGE", "Image")
     }
 
-
-    name = models.CharField(max_length=500, default = '')
-    value = models.TextField(max_length=300, blank=True, default='')
+    slug = models.SlugField(primary_key=True)
+    name = models.CharField(max_length=500)
+    value = models.TextField(max_length=300)
     type = models.CharField(max_length=5, choices=TYPES, default='TEXT')

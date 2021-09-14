@@ -3,7 +3,7 @@ from django.contrib.admin import register
 
 from backend.models.example import Example
 from backend.models.faq import Faq
-from backend.models.settings import Settings
+from backend.models.settings import Setting
 
 
 @register(Example)
@@ -11,9 +11,10 @@ class ExampleAdmin(admin.ModelAdmin):
     pass
 
 
-@register(Settings)
-class ExampleSettings(admin.ModelAdmin):
-    pass
+@register(Setting)
+class SettingAdmin(admin.ModelAdmin):
+    list_display = ('name', 'value', 'type')
+    ordering = ['name']
 
 
 @register(Faq)
