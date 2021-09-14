@@ -1,13 +1,14 @@
 from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets
 
-from backend.models.example import Example
-from backend.serializers.example import ExampleSerializer
+from backend.models.settings import Setting
+
+from backend.serializers.settings import SettingSerializer
 
 
 @extend_schema(
     description="Some descriptions"
 )
-class ExampleViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Example.objects.all()
-    serializer_class = ExampleSerializer
+class SettingViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Setting.objects.all()
+    serializer_class = SettingSerializer
