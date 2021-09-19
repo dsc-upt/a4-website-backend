@@ -11,5 +11,6 @@ class ExampleAdmin(admin.ModelAdmin):
 
 
 @register(Contact)
-class ContactsItemAdmin(admin.ModelAdmin):
+class ContactAdmin(admin.ModelAdmin):
     list_display = ('name', 'surname', 'email', 'phonenumber',)
+    oredering = ['name']
