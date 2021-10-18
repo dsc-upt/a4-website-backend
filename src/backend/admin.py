@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.admin import register
 
 from backend.models.example import Example
+from backend.models.contact import Contact
 from backend.models.faq import Faq
 from backend.models.settings import Setting
 
@@ -9,6 +10,12 @@ from backend.models.settings import Setting
 @register(Example)
 class ExampleAdmin(admin.ModelAdmin):
     pass
+
+
+@register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'surname', 'email', 'phonenumber',)
+    oredering = ['name']
 
 
 @register(Setting)
