@@ -6,6 +6,7 @@ from backend.models.article import Article
 from backend.models.contact import Contact
 from backend.models.faq import Faq
 from backend.models.settings import Setting
+from backend.models.menu import Menu
 
 
 @register(Example)
@@ -32,3 +33,7 @@ class SettingAdmin(admin.ModelAdmin):
 class FaqAdmin(admin.ModelAdmin):
     list_display = ('question', 'answer', 'published')
     ordering = ['question']
+
+@register(Menu)
+class MenuAdmin(admin.ModelAdmin):
+    list_display = ('name', 'type')
