@@ -16,11 +16,18 @@ from pathlib import Path
 from typing import Dict
 
 from django.contrib.admin import AdminSite
+import configparser
+
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+
+config = configparser.ConfigParser()
+configFilePath = os.path.join(BASE_DIR, 'config.ini')
+config.read(configFilePath)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-$30t!64o(^9(az^^a_&o-_q%#pwie+!bg-o9^r9gea$qs8u_$@'
@@ -80,8 +87,12 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config['DATABASE']['NAME'],
+        'USER': config['DATABASE']['USER'],
+        'PASSWORD': config['DATABASE']['PASSWORD'],
+        'HOST': config['DATABASE']['HOST'],
+        'PORT': config['DATABASE']['PORT'],
     }
 }
 
