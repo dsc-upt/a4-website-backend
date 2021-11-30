@@ -7,7 +7,7 @@ class Setting(models.Model):
         ("IMAGE", "Image")
     }
 
-    slug = models.SlugField(primary_key=True, null=True)
+    slug = models.SlugField(primary_key=True)
     name = models.CharField(max_length=500)
     value = models.TextField(max_length=300)
     type = models.CharField(max_length=5, choices=TYPES, default='TEXT')
