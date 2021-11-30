@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # name, information, facebook url, starting date, and a list of sponsors (objects from the Sponsor model)
 
 class Project(models.Model):
