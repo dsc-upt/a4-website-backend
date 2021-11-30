@@ -7,6 +7,7 @@ from backend.models.contact import Contact
 from backend.models.faq import Faq
 from backend.models.settings import Setting
 from backend.models.menu import Menu
+from backend.models.project import Project
 
 
 @register(Example)
@@ -20,7 +21,7 @@ class ArticleItemsAdmin(admin.ModelAdmin):
 @register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'phonenumber', 'subject', 'message')
-    oredering = ['name']
+    ordering = ['name']
 
 
 @register(Setting)
@@ -37,3 +38,7 @@ class FaqAdmin(admin.ModelAdmin):
 @register(Menu)
 class MenuAdmin(admin.ModelAdmin):
     list_display = ('name', 'type')
+
+@register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug', 'information', 'facebookURL', 'startDate')
