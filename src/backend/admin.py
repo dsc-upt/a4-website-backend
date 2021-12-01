@@ -8,15 +8,19 @@ from backend.models.faq import Faq
 from backend.models.settings import Setting
 from backend.models.menu import Menu
 from backend.models.project import Project
+from backend.models.sponsor import Sponsor
 
 
 @register(Example)
 class ExampleAdmin(admin.ModelAdmin):
     pass
 
+
 @register(Article)
 class ArticleItemsAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'content', 'published')
+    ordering = ['published']
+
 
 @register(Contact)
 class ContactAdmin(admin.ModelAdmin):
@@ -35,10 +39,18 @@ class FaqAdmin(admin.ModelAdmin):
     list_display = ('question', 'answer', 'published')
     ordering = ['question']
 
+
 @register(Menu)
 class MenuAdmin(admin.ModelAdmin):
     list_display = ('name', 'type')
 
+
 @register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'information', 'facebookURL', 'startDate')
+
+
+@register(Sponsor)
+class SponsorAdmin(admin.ModelAdmin):
+    list_display = ('name', 'image', 'description')
+    ordering = ['name']
