@@ -54,3 +54,10 @@ class ProjectAdmin(admin.ModelAdmin):
 class SponsorAdmin(admin.ModelAdmin):
     list_display = ('name', 'image', 'description')
     ordering = ['name']
+
+
+@register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+##please work
