@@ -60,3 +60,5 @@ class SponsorAdmin(admin.ModelAdmin):
 @register(Tag)
 class TagAdmin(admin.ModelAdmin):
     list_display = ['name']
+
+##please work
