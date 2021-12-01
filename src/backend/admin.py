@@ -9,6 +9,7 @@ from backend.models.settings import Setting
 from backend.models.menu import Menu
 from backend.models.project import Project
 from backend.models.sponsor import Sponsor
+from backend.models.tag import Tag
 
 
 @register(Example)
@@ -54,3 +55,10 @@ class ProjectAdmin(admin.ModelAdmin):
 class SponsorAdmin(admin.ModelAdmin):
     list_display = ('name', 'image', 'description')
     ordering = ['name']
+
+
+@register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+##please work
