@@ -11,5 +11,3 @@ from backend.serializers.tag import TagSerializer
 class TagViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
-
-##please work
