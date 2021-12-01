@@ -1,5 +1,6 @@
 from django.db import models
 
+
 #add slug and image
 class Article(models.Model):
     name = models.CharField(max_length=100)
