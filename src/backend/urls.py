@@ -8,7 +8,7 @@ from backend.views.settings import SettingViewSet
 from backend.views.menu import MenuViewSet
 # from backend.views.project import ProjectViewSet
 from backend.views.sponsor import SponsorViewSet
-
+from backend.views.student import StudentViewSet
 
 router = DefaultRouter()
 router.register("examples", ExampleViewSet)
@@ -19,5 +19,6 @@ router.register("articles", ArticleViewSet)
 router.register("menu", MenuViewSet)
 # router.register("projects", ProjectViewSet)
 router.register("sponsor", SponsorViewSet)
+router.register("student", StudentViewSet)
 
 backend_urls = router.urls
