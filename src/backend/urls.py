@@ -9,7 +9,6 @@ from backend.views.menu import MenuViewSet
 # from backend.views.project import ProjectViewSet
 from backend.views.sponsor import SponsorViewSet
 
-from backend.views.tag import TagViewSet
 
 router = DefaultRouter()
 router.register("examples", ExampleViewSet)
@@ -20,8 +19,5 @@ router.register("articles", ArticleViewSet)
 router.register("menu", MenuViewSet)
 # router.register("projects", ProjectViewSet)
 router.register("sponsor", SponsorViewSet)
-router.register("tag", TagViewSet)
-
-##please work
 
 backend_urls = router.urls
