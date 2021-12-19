@@ -6,4 +6,4 @@ from backend.models.article import Article
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
-        exclude = ('published',)
+        fields = '__all__'

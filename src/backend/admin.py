@@ -3,6 +3,8 @@ from django.contrib.admin import register
 
 from backend.models.example import Example
 from backend.models.article import Article
+from backend.models.department import Department
+from backend.models.partner import Partner
 from backend.models.contact import Contact
 from backend.models.faq import Faq
 from backend.models.settings import Setting
@@ -26,6 +28,18 @@ class ArticleItemsAdmin(admin.ModelAdmin):
 @register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'phonenumber', 'subject', 'message')
+    ordering = ['name']
+
+
+@register(Department)
+class DepartmentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'photo')
+    ordering = ['name']
+
+
+@register(Partner)
+class PartnerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'website', 'photo')
     ordering = ['name']
 
 
