@@ -56,9 +56,7 @@ class SponsorAdmin(admin.ModelAdmin):
     list_display = ('name', 'image', 'description')
     ordering = ['name']
 
-
 @register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = ['name']
     ordering = ['name']
-
